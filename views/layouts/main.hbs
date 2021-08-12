@@ -19,8 +19,16 @@
   <header>
     <nav class="navbar navbar-light bg-light ms-3">
       <a class="navbar-brand" href="/">
-        <span class="navbar-brand mb-0 h1">Expense Tracker</span>
+        <span class="navbar-brand mb-0 h1">{{#if isAuthenticated}}{{user.name}}'s{{/if}} Expense Tracker</span>
       </a>
+      {{#if isAuthenticated}}
+      <a href="/users/logout" class="btn btn-outline-dark ml-4">登出</a>
+      {{else}}
+      <div class="log-in-settings align-middle">
+        <a href="/users/register" class="btn btn-outline-dark">註冊</a>
+        <a href="/users/login" class="btn btn-outline-dark">登入</a>
+      </div>
+      {{/if}}
     </nav>
 
   </header>
@@ -39,7 +47,6 @@
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
     crossorigin="anonymous"></script>
   <script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
-  <script src="/javascripts/plotly-piechart.js"></script>
 </body>
 
 </html>
