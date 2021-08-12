@@ -1,5 +1,6 @@
 const express = require('express')
-const bcrypt = require('bcrypt')
+const passport = require('passport')
+const bcrypt = require('bcryptjs')
 
 const router = express.Router()
 
@@ -10,6 +11,11 @@ const User = require('../../models/user')
 router.get('/login', (req, res) => {
   res.render('login')
 })
+
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login'
+}))
 
 
 //Register
@@ -39,19 +45,24 @@ router.post('/register', (req, res) => {
         errors.push({ message: '此email已經註冊過了！' })
         res.render('register', { errors, name, email, password, confirmPassword })
       } else {
-        User.create({ name, email, password })
-          .then(() => res.redirect('/users/login'))
-          .catch(error => console.log(error))
+        bcrypt
+          .genSalt(10)
+          .then(salt => bcrypt.hash(password, salt))
+          .then(hash => {
+            User.create({ name, email, password: hash })
+              .then(() => res.redirect('/users/login'))
+              .catch(error => console.log(error))
+          })
       }
-      // bcrypt
-      //   .genSalt(10)
-      //   .then(salt => bcrypt.hash(password, salt))
-      //   .then(hash => {
-      //     User.create({ name, email, password: hash })
-      //       .then(() => res.redirect('/users/login'))
-      //       .catch(error => console.log(error))
-      //   })
     })
 })
+
+
+// Logout
+router.get('/logout', (res, req) => {
+  req.logout()
+  res.redirect('/user/login')
+})
+
 
 module.exports = router

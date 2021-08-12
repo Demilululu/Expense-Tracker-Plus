@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+const usePassport = require('./config/passport')
 require('./config/mongoose')
 const routes = require('./routes/index')
 
@@ -31,7 +32,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-
+usePassport(app)
 
 app.use(routes)
 
