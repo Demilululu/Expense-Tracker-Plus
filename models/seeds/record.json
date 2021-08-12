@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "name": "ZARA衣服",
+      "date": "2021-04-23",
+      "category": "entertainment",
+      "cost": 670
+    },
+    {
+      "name": "全聯買菜",
+      "date": "2021-04-23",
+      "category": "household",
+      "cost": 483
+    },
+    {
+      "name": "悠遊卡充值",
+      "date": "2021-04-23",
+      "category": "transport",
+      "cost": 500
+    },
+    {
+      "name": "看電影",
+      "date": "2021-04-24",
+      "category": "entertainment",
+      "cost": 320
+    },
+    {
+      "name": "熱狗+爆米花",
+      "date": "2021-04-24",
+      "category": "food",
+      "cost": 180
+    },
+    {
+      "name": "日檢參考書",
+      "date": "2021-04-25",
+      "category": "others",
+      "cost": 800
+    },
+    {
+      "name": "星巴克午餐",
+      "date": "2021-04-25",
+      "category": "food",
+      "cost": 175
+    },
+    {
+      "name": "衛生紙",
+      "date": "2021-04-25",
+      "category": "household",
+      "cost": 399
+    },
+    {
+      "name": "計程車",
+      "date": "2021-04-26",
+      "category": "transport",
+      "cost": 145
+    },
+    {
+      "name": "Netflix家庭會員",
+      "date": "2021-04-28",
+      "category": "entertainment",
+      "cost": 390
+    },
+    {
+      "name": "全聯買菜",
+      "date": "2021-04-28",
+      "category": "household",
+      "cost": 937
+    }
+  ]
+}
