@@ -2,6 +2,7 @@
   <div class="col-md-8 m-auto">
     <div class="card card-body">
       <h2 class="text-center my-3">Register</h2>
+      {{>message}}
       <form action="/users/register" method="POST">
         <label for="name">Name</label>
         <input class="form-control" type="text" name="name" id="name" maxlength="10" value="{{name}}"
