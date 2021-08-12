@@ -59,7 +59,7 @@ router.post('/register', (req, res) => {
 
 
 // Logout
-router.get('/logout', (res, req) => {
+router.get('/logout', (req, res) => {
   req.logout()
   res.redirect('/user/login')
 })

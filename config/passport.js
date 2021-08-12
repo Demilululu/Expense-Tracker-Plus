@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs')
 
 const LocalStrategy = require('passport-local').Strategy
 
+const User = require('../models/user')
+
 module.exports = (app) => {
   app.use(passport.initialize())
   app.use(passport.session())
@@ -10,9 +12,8 @@ module.exports = (app) => {
   //Set Local Strategy
   passport.use(new LocalStrategy({
     usernameField: 'email',
-    passwordField: 'password',
-    passReqToCallback: true
-  }, (req, email, password, done) => {
+    passwordField: 'password'
+  }, (email, password, done) => {
     User.findOne({ email })
       .then(user => {
         if (!user) {
@@ -25,6 +26,7 @@ module.exports = (app) => {
           return done(null, user)
         })
       })
+      .catch(error => done(error, false))
   }))
 
   //Serialise and Deserialise

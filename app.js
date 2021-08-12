@@ -12,7 +12,7 @@ require('./config/mongoose')
 const routes = require('./routes/index')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 
 const hbs = exphbs.create({ defaultLayout: 'main', extname: '.hbs' })
 hbs.handlebars.registerHelper('isEqual', function (v1, v2, options) {
@@ -28,7 +28,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(session({
-  secret: process.env.SESSION_SECRETE,
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
