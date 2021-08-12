@@ -1,5 +1,5 @@
 const express = require('express')
-
+const bcrypt = require('bcrypt')
 
 const router = express.Router()
 
@@ -22,11 +22,11 @@ router.post('/register', (req, res) => {
   const errors = []
 
   if (!name | !email | !password | !confirmPassword) {
-    error.push({ message: '所有的欄位都是必填！' })
+    errors.push({ message: '所有的欄位都是必填！' })
   }
 
   if (password !== confirmPassword) {
-    error.push({ message: '密碼與確認密碼不相符！' })
+    errors.push({ message: '密碼與確認密碼不相符！' })
   }
 
   if (errors.length > 0) {
@@ -37,19 +37,21 @@ router.post('/register', (req, res) => {
     .then(user => {
       if (user) {
         errors.push({ message: '此email已經註冊過了！' })
-        return res.render('register', { errors, name, email, password, confirmPassword })
+        res.render('register', { errors, name, email, password, confirmPassword })
+      } else {
+        User.create({ name, email, password })
+          .then(() => res.redirect('/users/login'))
+          .catch(error => console.log(error))
       }
-      User.create({ name, email, password })
-        .then(() => res.redirect('/users/login'))
-        .catch(error => console.log(error))
+      // bcrypt
+      //   .genSalt(10)
+      //   .then(salt => bcrypt.hash(password, salt))
+      //   .then(hash => {
+      //     User.create({ name, email, password: hash })
+      //       .then(() => res.redirect('/users/login'))
+      //       .catch(error => console.log(error))
+      //   })
     })
-
-
-
-
-
-
-  res.render('register')
 })
 
 module.exports = router
