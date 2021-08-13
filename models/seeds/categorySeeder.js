@@ -2,7 +2,7 @@ const Category = require('../category')
 
 const db = require('../../config/mongoose')
 
-const category_info =
+const category =
   [{
     'name': 'household',
     'label': '家居物業',
@@ -31,7 +31,7 @@ const category_info =
 
 
 db.once('open', () => {
-  Category.create(category_info)
+  Category.create(category)
     .then(() => {
       console.log('category seeder done!')
       db.close()

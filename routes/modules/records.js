@@ -9,7 +9,7 @@ router.get('/new', (req, res) => {
 
   return Category.find()
     .lean()
-    .then(category => res.render('new', { category_info: category }))
+    .then(category => res.render('new', { category }))
     .catch(error => console.log(error))
 })
 
@@ -33,7 +33,7 @@ router.get('/:record_id/edit', (req, res) => {
     .then(category => {
       Record.findOne({ _id, userId })
         .lean()
-        .then(record => res.render('edit', { record, category_selected, category_info: category }))
+        .then(record => res.render('edit', { record, category_selected, category }))
     })
     .catch(error => console.log(error))
 })

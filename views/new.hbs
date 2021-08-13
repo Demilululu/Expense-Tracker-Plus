@@ -22,7 +22,7 @@
         <div class="col-sm-10">
           <select class="custom-select" name="category" required>
             <option value="" selected disabled hidden>請選擇...</option>
-            {{#each category_info}}
+            {{#each category}}
             <option value="{{this.name}}">{{this.label}}</option>
             {{/each}}
           </select>
