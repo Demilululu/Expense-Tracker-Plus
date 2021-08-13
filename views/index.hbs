@@ -17,7 +17,7 @@
     <div class="total-expense my-5">
       <div class="row">
         <div class="col-4 total-expense-title">
-          <h5>總金額</h5>
+          <h5><b>總金額</b></h5>
         </div>
         <div class="col-8 total-expense-num text-left">
           <h1> {{total_expense}}</h1>
@@ -43,22 +43,22 @@
             <td>
               <div class="category-name d-flex flex-column">
                 <div class="category m-b">
-                  {{this.name}}
+                  <b>{{this.name}}</b> / {{this.merchant}}
                 </div>
                 <div class="date mt-0">
                   {{this.date}}
                 </div>
               </div>
             </td>
-            <td class="text-center align-middle">{{this.cost}}</td>
+            <td class="text-center align-middle record-amount">{{this.amount}}</td>
             <td class="text-center align-middle">
-              <a class="btn btn-primary btn-sm" href="/records/{{this._id}}/edit">修改</a>
-              <a href="#myModal-{{this._id}}" class="trigger-btn btn btn-primary btn-sm" data-toggle="modal">刪除</a>
-
-
+              <a class="btn btn-primary btn-sm" href="/records/{{this._id}}/edit"><b
+                  class="record-buttons align-middle">修改</b></a>
+              <a href="#myModal-{{this._id}}" class="trigger-btn btn btn-primary btn-sm" data-toggle="modal"><b
+                  class="record-buttons align-middle">刪除</b></a>
+            </td>
+          </tr>
     </div>
-    </td>
-    </tr>
     <div id="myModal-{{this._id}}" class="modal fade">
       <div class="modal-dialog modal-confirm">
         <div class="modal-content">

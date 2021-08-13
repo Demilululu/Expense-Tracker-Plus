@@ -1,7 +1,7 @@
 // let values = []
 // let labels = []
 
-// Record.aggregate([{ $group: { _id: "$category", total: { $sum: "$cost" } } }])
+// Record.aggregate([{ $group: { _id: "$category", total: { $sum: "$amount" } } }])
 //   .then(records => {
 //     records.forEach((record) => {
 //       values.push(record.total)

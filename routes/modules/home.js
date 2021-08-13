@@ -8,8 +8,9 @@ const Category = require('../../models/category')
 router.get('/', (req, res) => {
   let total_expense = 0
   let category_info = []
+  const userId = req.user._id
   const viewBy = req.query.viewBy
-  const filterBy = {}
+  const filterBy = { userId }
 
   if (viewBy) {
     filterBy.category = viewBy
@@ -30,7 +31,7 @@ router.get('/', (req, res) => {
           })
         })
         .then(() => {
-          records.forEach((record) => { total_expense += record.cost })
+          records.forEach((record) => { total_expense += record.amount })
           res.render('index', { records, total_expense, category_info, viewBy })
         })
     })

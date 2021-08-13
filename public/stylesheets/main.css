@@ -10,8 +10,16 @@
   color: lightskyblue;
 }
 
+.category-name, .record-amount {
+	font-size: 20px;
+}
+
 .date {
-  font-size: 8px;
+  font-size: 14px;
+}
+
+.record-buttons {
+	font-size: 16px;
 }
 
 .btn-primary,
@@ -19,6 +27,11 @@
 .btn-primary:focus {
     background-color: lightskyblue;
     border-color: lightskyblue;
+		margin: 2px 0 0 5px;
+		transition: all 0.4s;
+		line-height: normal;
+		min-width: 60px;
+		min-height: 35px;
 }
 
 .btn-primary:hover,
@@ -93,7 +106,6 @@ https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=delete-confirm
 	min-width: 120px;
 	border: none;
 	min-height: 40px;
-	border-radius: 3px;
 	margin: 0 5px;
 }
 .modal-confirm .btn-secondary {
