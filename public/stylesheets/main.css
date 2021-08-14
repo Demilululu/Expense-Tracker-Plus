@@ -2,10 +2,25 @@ body {
 	background: #c6a78f80;
 }
 
-.form-title {
-	font-family: 'STIX Two Text', serif;
-	font-style: italic;
+.lead {
+	font-family: 'Caveat', cursive;
+}
+
+.form-title, .form-label, .navbar-brand, .total-expense {
+	font-family: 'Caveat', cursive;
 	font-weight: bold;
+	color: rgb(100, 98, 98)
+}
+.form-title {
+	font-size: 40px;
+}
+
+.form-group label {
+	font-size: 21px;
+} 
+
+.form-title {
+	margin: 20px 0 40px 0
 }
 
 td {
@@ -14,13 +29,22 @@ td {
 
 .navbar-brand {
   margin-left: 10px;
+	font-size: 30px;
+	padding: 0;
+}
+
+.total-expense-title {
+	font-size: 60px;
+	text-align: center;
 }
 
 .total-expense-num {
   color: #bb99b7;
+	font-size: 60px;
+	text-align: center;
 }
 
-.fa-lg {
+.fa-lg, .fa-2x {
   color: #bb99b7;
 }
 

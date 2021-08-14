@@ -23,13 +23,13 @@
       </form>
     </div>
 
-    <div class="total-expense my-5">
+    <div class="total-expense my-2">
       <div class="row">
-        <div class="col-4 total-expense-title">
-          <h5><b>總金額</b></h5>
+        <div class="col-5 total-expense-title">
+          <p>Total Expense</p>
         </div>
-        <div class="col-8 total-expense-num text-left">
-          <h1> {{total_expense}}</h1>
+        <div class="col-7 total-expense-num">
+          <p> {{total_expense}}</p>
         </div>
         <div id="myDiv"></div>
       </div>
@@ -51,8 +51,9 @@
               {{{this.category_icon}}}</td>
             <td>
               <div class="category-name d-flex flex-column">
-                <div class="category m-b">
-                  <b>{{this.name}}</b> / {{this.merchant}}
+                <div class="category">
+                  <b>{{this.name}}</b>
+                  <i>{{this.merchant}}</i>
                 </div>
                 <div class="date mt-0">
                   {{this.date}}
