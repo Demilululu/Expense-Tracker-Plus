@@ -1,6 +1,32 @@
 {
   "results": [
     {
+      "name": "房租",
+      "date": "2021-07-29",
+      "category": "household",
+      "amount": 9500
+    },
+    {
+      "name": "電費",
+      "date": "2021-07-30",
+      "category": "household",
+      "merchant": "台電",
+      "amount": 2700
+    },
+    {
+      "name": "外賣",
+      "date": "2021-07-30",
+      "category": "food",
+      "merchant": "UberEats",
+      "amount": 380
+    },
+    {
+      "name": "公車",
+      "date": "2021-07-31",
+      "category": "transport",
+      "amount": 45
+    },
+    {
       "name": "衣服",
       "date": "2021-08-13",
       "category": "entertainment",

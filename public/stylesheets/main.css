@@ -52,6 +52,11 @@ td {
 	font-size: 20px;
 }
 
+.category-name span {
+	margin-left: 5px;
+	font-size: 15px;
+}
+
 .date {
   font-size: 14px;
 }
@@ -78,6 +83,19 @@ td {
   border-color:hsl(146, 15%, 47%)  !important;
 }
 
+
+.btn-info,
+.btn-info:visited,
+.btn-info:focus {
+	background-color: #bb99b7;
+  border-color: #bb99b7;
+}
+
+.btn-info:hover,
+.btn-info:active {
+	background-color: hsl(308, 15%, 51%);
+  border-color: hsl(308, 15%, 51%);
+}
 
 /* Design from 
 https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=delete-confirmation-modal */
