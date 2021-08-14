@@ -1,16 +1,16 @@
 const express = require('express')
+const dayjs = require('dayjs')
+
 const router = express.Router()
 
 const Record = require('../../models/record')
 const Category = require('../../models/category')
 
 //New record
-router.get('/new', (req, res) => {
+router.get('/new', async (req, res) => {
+  const category = await Category.find().lean()
 
-  return Category.find()
-    .lean()
-    .then(category => res.render('new', { category }))
-    .catch(error => console.log(error))
+  return res.render('new', { category })
 })
 
 router.post('/', (req, res) => {
@@ -23,17 +23,17 @@ router.post('/', (req, res) => {
 })
 
 //Edit record
-router.get('/:record_id/edit', (req, res) => {
+router.get('/:record_id/edit', async (req, res) => {
   const _id = req.params.record_id
   const userId = req.user._id
   const category_selected = req.body.category
+  const category = await Category.find().lean()
 
-  return Category.find()
+  return Record.findOne({ _id, userId })
     .lean()
-    .then(category => {
-      Record.findOne({ _id, userId })
-        .lean()
-        .then(record => res.render('edit', { record, category_selected, category }))
+    .then(record => {
+      record.date = dayjs(record.date).format('YYYY-MM-DD')
+      res.render('edit', { record, category_selected, category })
     })
     .catch(error => console.log(error))
 })

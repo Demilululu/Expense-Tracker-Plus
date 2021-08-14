@@ -3,20 +3,20 @@
     <div class="filter">
       <form action="/">
         <div class="input-group mb-3">
+          <select class="custom-select mr-5" name="viewByMonth" onchange="this.form.submit()">
+            <option selected disabled hidden>選擇月份</option>
+            <option value="">全部月份</option>
+            {{#each month}}
+            <option value="{{this}}" {{#isEqual this ../viewByMonth}} selected {{/isEqual}}>{{this}}</option>
+            {{/each}}
+          </select>
+
           <select class="custom-select" name="viewByCategory" onchange="this.form.submit()">
             <option selected disabled hidden>選擇類別</option>
             <option value="">全部類別</option>
             {{#each category}}
             <option value="{{this.name}}" {{#isEqual this.name ../viewByCategory}} selected {{/isEqual}}>{{this.label}}
             </option>
-            {{/each}}
-          </select>
-
-          <select class="custom-select" name="viewByMonth" onchange="this.form.submit()">
-            <option selected disabled hidden>選擇月份</option>
-            <option value="">全部月份</option>
-            {{#each month}}
-            <option value="{{@index}}" {{#isEqual this ../viewByMonth}} selected {{/isEqual}}>{{this}}</option>
             {{/each}}
           </select>
         </div>
@@ -61,10 +61,13 @@
             </td>
             <td class="text-center align-middle record-amount">{{this.amount}}</td>
             <td class="text-center align-middle">
-              <a class="btn btn-primary btn-sm" href="/records/{{this._id}}/edit"><b
-                  class="record-buttons align-middle">修改</b></a>
-              <a href="#myModal-{{this._id}}" class="trigger-btn btn btn-primary btn-sm" data-toggle="modal"><b
-                  class="record-buttons align-middle">刪除</b></a>
+              <div class="buttons ml-5">
+                <a class="btn btn-primary btn-sm ml-2" href="/records/{{this._id}}/edit"><b
+                    class="record-buttons align-middle">修改</b></a>
+                <a href="#myModal-{{this._id}}" class="trigger-btn btn btn-primary btn-sm record-buttons ml-2"
+                  data-toggle="modal"><b>刪除</b></a>
+              </div>
+
             </td>
           </tr>
     </div>

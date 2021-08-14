@@ -1,13 +1,27 @@
+body {
+	background: #c6a78f80;
+}
+
+.form-title {
+	font-family: 'STIX Two Text', serif;
+	font-style: italic;
+	font-weight: bold;
+}
+
+td {
+    background-color: white;
+} 
+
 .navbar-brand {
   margin-left: 10px;
 }
 
 .total-expense-num {
-  color: darkcyan;
+  color: #bb99b7;
 }
 
 .fa-lg {
-  color: lightskyblue;
+  color: #bb99b7;
 }
 
 .category-name, .record-amount {
@@ -25,9 +39,9 @@
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:focus {
-    background-color: lightskyblue;
-    border-color: lightskyblue;
-		margin: 2px 0 0 5px;
+    background-color: #a0b3a8;
+    border-color: #a0b3a8;
+		margin: 2px 0;
 		transition: all 0.4s;
 		line-height: normal;
 		min-width: 60px;
@@ -36,8 +50,8 @@
 
 .btn-primary:hover,
 .btn-primary:active {
-  background-color: rgb(44, 164, 238) !important;
-  border-color:rgb(44, 164, 238)  !important;
+  background-color:hsl(146, 15%, 47%) !important;
+  border-color:hsl(146, 15%, 47%)  !important;
 }
 
 
